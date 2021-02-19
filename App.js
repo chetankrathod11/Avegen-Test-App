@@ -1,5 +1,13 @@
 import React, { useState } from 'react';
-import { Text, TextInput, StyleSheet, View, ImageBackground, TouchableWithoutFeedback, Keyboard, TouchableOpacity } from 'react-native';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  TextInput, 
+  Keyboard, 
+  TouchableWithoutFeedback, 
+  TouchableOpacity 
+} from 'react-native';
 
 export default function App() {
 
@@ -20,35 +28,35 @@ export default function App() {
   return (
     <TouchableWithoutFeedback
       onPress={() => {
-        Keyboard.dismiss();
+      Keyboard.dismiss();
       }}>
-        <View style={styles.container} >
-          <View style={styles.rectangle}>
-            <Text style={styles.text}>{count}</Text>          
-          </View>
-            <View>
-              <TextInput 
-                keyboardType="number-pad"
-                placeholder="Enter number" 
-                style={styles.input} 
-                onChangeText={text =>  value = text} 
-              />
-            </View>
+      <View style={styles.container} >
+        <View style={styles.rectangle}>
+          <Text style={styles.text}>{count}</Text>          
+        </View>
+        <View>
+          <TextInput 
+            keyboardType="number-pad"
+            placeholder="Enter number" 
+            style={styles.input} 
+            onChangeText={text =>  value = text} 
+          />
+        </View>
 
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={add} >
-              <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Add</Text>
-            </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={add} >
+            <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Add</Text>
+          </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={subtract} >
-              <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Subtract</Text>
-            </TouchableOpacity>
-          </View>
-
-          <TouchableOpacity style={[styles.button, {marginLeft: 160, marginTop: 20}]} onPress={reset} >
-            <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Reset</Text>
+          <TouchableOpacity style={styles.button} onPress={subtract} >
+            <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Subtract</Text>
           </TouchableOpacity>
         </View>
+
+        <TouchableOpacity style={[styles.button, {marginLeft: 160, marginTop: 20}]} onPress={reset} >
+          <Text style={[styles.text, {fontSize: 18 ,color: "#fff"}]}>Reset</Text>
+        </TouchableOpacity>
+      </View>
     </TouchableWithoutFeedback>
   );
 }
